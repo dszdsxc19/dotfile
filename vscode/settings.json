@@ -1,0 +1,257 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": ["-pvc-", "%DOCFILE%"]
+    },
+    {
+      "name": "latexmk-xelatex",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-pv",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "xelatex -> biber -> xelatex*2",
+      "tools": ["xelatex", "biber", "xelatex", "xelatex"]
+    },
+    {
+      "name": "latexmk",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "xelatex*2",
+      "tools": ["xelatex", "xelatex"]
+    },
+    {
+      "name": "xelatex -> bibtex -> xelatex*2",
+      "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+    },
+    {
+      "name": "pdflatex",
+      "tools": ["pdflatex"]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex*2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "pdflatex -> biber -> pdflatex*2",
+      "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "bibtex",
+      "tools": ["bibtex"]
+    },
+    {
+      "name": "biber",
+      "tools": ["biber"]
+    }
+  ],
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk"
+  ],
+  // 编译出错时是否通过弹窗显示
+  "latex-workshop.message.error.show": true,
+  "latex-workshop.message.warning.show": false,
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.latexindent.path": "/Library/TeX/texbin/latexindent",
+  // // 保存时就启动 Build 编译，Build 默认调用 recipe 中的第一条命令，这里默认设置为 never，如果需要可以改为 onSave
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  // 取当前窗口大小和 wordWrapColumn 的最小值来决定 VS Code 中一行的换行位置
+  "editor.wordWrapColumn": 120,
+  "editor.lineNumbers": "on",
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.eslint"
+  ],
+  "files.associations": {
+    "*.sty": "latex-expl3",
+    "*.def": "latex-expl3",
+    "*.tex": "latex",
+    "*.cls": "latex-expl3"
+  },
+  // ------------ other --------------
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.linkedEditing": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 10000,
+  "redhat.telemetry.enabled": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "git.enableSmartCommit": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "workbench.colorTheme": "GitHub Light Default",
+  "yaml.schemas": {
+    "file:///Users/tanyong/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "editor.unicodeHighlight.allowedCharacters": {
+    "�": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.inlineSuggest.enabled": true,
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.formatOnSave": false
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.analysis.indexing": false,
+  "editor.wordWrap": "on",
+  "workbench.editorAssociations": {
+    "*.pdf": "latex-workshop-pdf-hook",
+    "*.csv": "gc-excelviewer-csv-editor"
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "terminal.integrated.inheritEnv": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "extensions.ignoreRecommendations": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-c>": false,
+    "<C-v>": false
+  },
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "hediet.vscode-drawio.resizeImages": null,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "window.autoDetectColorScheme": true,
+  "markdown.copyFiles.destination": {
+    "**/*.md": "_media/${fileName}"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.enableCommitSigning": true,
+  "editor.tabSize": 2,
+  "gitlens.ai.experimental.provider": "openai",
+  "gitlens.ai.experimental.openai.model": "gpt-4-turbo-preview",
+  "java.help.showReleaseNotes": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontSize": 13,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}
