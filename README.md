@@ -38,7 +38,7 @@ brew bundle install
 
 ### oh-my-zsh
 
-MacOS use zsh as default shell. 
+MacOS use zsh as default shell.
 
 > Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration.
 
@@ -74,7 +74,7 @@ echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 3. Start a new terminal session.
 ##### [zsh-syntax-highlightin](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
-Similar with `zsh-autosuggestions`, 
+Similar with `zsh-autosuggestions`,
 ```sh
 brew install zsh-syntax-highlighting
 ```
@@ -97,12 +97,22 @@ brew search nerd-font
 brew install font-jetbrains-mono-nerd-font
 ```
 
+## Git and Github
+
+It can be said that git and github are the passports to the programmer world. In order to successfully upload code and sign, we need the following configuration.
+### ssh-key
+
+[Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and then [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+### GPG
+
+We can use GPG to sign our commit. Tutorial: [Set up a GPG key for signing Git commits on MacOS (M1)](https://gist.github.com/phortuin/cf24b1cca3258720c71ad42977e1ba57)
+
 ## IDE
 
 ### GUI
 [VS Code](https://code.visualstudio.com) is open source and powerful. Installation is simple in Homebrew as I've introduced as follow: `brew install --cask visual-studio-code`.
 
-You can even use `Homebrew` to install vscode extensions.
+You can even use `Homebrew` to install `vscode` extensions.
 ### Terminal
 
 When I was young, I spent lot of time studying configuring [vim](https://github.com/vim/vim) and dreaming I was a geek who can type the world. Even though I finally give in, the passion remained and adapting to changes in time just like the relationship between [Neovim](https://github.com/neovim/neovim) and vim.
@@ -185,6 +195,13 @@ npm install -g @angular/cli
 ```sh
 npx create-next-app@latest
 ```
+
+### Java
+
+```sh
+brew install openjdk@17
+echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
+```
 ## Other tools
 #### [Neofetch](https://github.com/dylanaraps/neofetch)
 
@@ -224,6 +241,6 @@ brew install zsh-vi-mode
 
 and then:
 ```
-echo "source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc 
+echo "source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 # References
