@@ -38,7 +38,7 @@ brew bundle install
 
 ### oh-my-zsh
 
-MacOS use zsh as default shell.
+MacOS use zsh as default shell. 
 
 > Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration.
 
@@ -74,7 +74,7 @@ echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 3. Start a new terminal session.
 ##### [zsh-syntax-highlightin](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
-Similar with `zsh-autosuggestions`,
+Similar with `zsh-autosuggestions`, 
 ```sh
 brew install zsh-syntax-highlighting
 ```
@@ -141,6 +141,25 @@ This is a simple graphical user interface for Neovim (an aggressively refactored
 
 tmux is very useful when you need to connect to remote or you want to keep your content when you reconnect. You can refer to [Tmux 使用教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html) to learn how to use.
 
+#### auto tmux resurrecting 
+
+There are many tools to persistent:  [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect),[tmux-continuum](https://github.com/tmux-plugins/tmux-continuum), [tmuxp](https://github.com/tmux-python/tmuxp) and [tmuxinator](https://github.com/tmuxinator/tmuxinator).
+
+I do not need to complex function, so [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) plus [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) is good for me. It's managed by [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+
+set as below in `~/.tmux.conf`:
+```conf
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-save-interval '15'
+
+# Option to display current status of tmux continuum in tmux status line. 
+set -g status-right 'Continuum status: #{continuum_status}'
+```
 ## dotfiles
 
 Many software custom configurations are written in dotfiles, so in order to achieve the goal of write once, run anywhere, **we should also back up this part**.
@@ -241,6 +260,6 @@ brew install zsh-vi-mode
 
 and then:
 ```
-echo "source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+echo "source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc 
 ```
 # References
