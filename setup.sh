@@ -42,4 +42,7 @@ source ~/.zshrc
 # 安装 Brewfile 中的软件
 brew bundle install
 
-# 配置 iTerm2
+# 配置 nvim
+cp -r ./nvim ~/.config/
+# 手动配置iTerm2
+echo "请手动配置iTerm2"
